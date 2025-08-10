@@ -28,13 +28,14 @@
     }
     main {
       padding: 20px 30px;
+      max-width: 900px;
+      margin: auto;
     }
     h2 {
       margin-top: 0;
       border-bottom: 2px solid white;
       padding-bottom: 10px;
     }
-
     /* Acordeón */
     .accordion {
       background-color: #003366;
@@ -69,7 +70,6 @@
     .accordion.active:after {
       transform: rotate(180deg); /* flecha hacia arriba */
     }
-
     .panel {
       background-color: #002147;
       max-height: 0;
@@ -79,7 +79,6 @@
       padding-left: 20px;
       margin-bottom: 20px;
     }
-
     .panel ul {
       list-style: none;
       padding: 0;
@@ -90,20 +89,37 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      cursor: pointer;
     }
     .panel li img.video-icon {
-      width: 24px;
-      height: 24px;
+      width: 40px;
+      height: 40px;
       filter: invert(1);
+      pointer-events: none;
     }
-    .panel li a {
+    .panel li span {
       color: #aad4ff;
-      text-decoration: none;
       font-weight: 500;
       font-size: 1rem;
+      user-select: none;
     }
-    .panel li a:hover {
+    .panel li:hover span {
       text-decoration: underline;
+    }
+    #video-player {
+      margin-top: 30px;
+      background: #002147;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    #video-player iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -120,21 +136,21 @@
     </button>
     <div class="panel">
       <ul>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=y2L6iQK8HEM" target="_blank" rel="noopener noreferrer">Angiodisplasia gástrica</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=6MjwMITIQfM" target="_blank" rel="noopener noreferrer">Varices esofágicas de gran tamaño</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=mou-UHDCUrg" target="_blank" rel="noopener noreferrer">Tumor de píloro</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=-4vMUr155T8" target="_blank" rel="noopener noreferrer">Divertículo duodenal</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=a5dnIREZ8zU" target="_blank" rel="noopener noreferrer">Pangastritis hemorrágica</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=cagaqoffQNY" target="_blank" rel="noopener noreferrer">Hernia deslizante</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=wwSWdHh1fTI" target="_blank" rel="noopener noreferrer">Gastritis erosiva</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=YdjVDeQroKk" target="_blank" rel="noopener noreferrer">Polipectomía gástrica</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=k0fO2Jx46pQ" target="_blank" rel="noopener noreferrer">Esofagitis</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=5hn7w2qk1RI" target="_blank" rel="noopener noreferrer">Poliposis gástrica</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=2-mSh50Jwsw" target="_blank" rel="noopener noreferrer">Tumor de cuerpo gástrico</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=8NZZPkzEEx0" target="_blank" rel="noopener noreferrer">Prolapso gástrico</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=Ws3NdY_R8nc" target="_blank" rel="noopener noreferrer">Pangastritis hipertensiva</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=wBRnQGNPB5w" target="_blank" rel="noopener noreferrer">Cuerpo extraño hueso en esófago</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/watch?v=cN9uSHL1VMc" target="_blank" rel="noopener noreferrer">Cuerpo extraño trozo de carne de hace 5 días en esófago</a></li>
+        <li data-video="y2L6iQK8HEM"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Angiodisplasia gástrica</span></li>
+        <li data-video="6MjwMITIQfM"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Varices esofágicas de gran tamaño</span></li>
+        <li data-video="mou-UHDCUrg"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Tumor de píloro</span></li>
+        <li data-video="-4vMUr155T8"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Divertículo duodenal</span></li>
+        <li data-video="a5dnIREZ8zU"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Pangastritis hemorrágica</span></li>
+        <li data-video="cagaqoffQNY"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Hernia deslizante</span></li>
+        <li data-video="wwSWdHh1fTI"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Gastritis erosiva</span></li>
+        <li data-video="YdjVDeQroKk"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Polipectomía gástrica</span></li>
+        <li data-video="k0fO2Jx46pQ"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Esofagitis</span></li>
+        <li data-video="5hn7w2qk1RI"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Poliposis gástrica</span></li>
+        <li data-video="2-mSh50Jwsw"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Tumor de cuerpo gástrico</span></li>
+        <li data-video="8NZZPkzEEx0"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Prolapso gástrico</span></li>
+        <li data-video="Ws3NdY_R8nc"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Pangastritis hipertensiva</span></li>
+        <li data-video="wBRnQGNPB5w"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Cuerpo extraño hueso en esófago</span></li>
+        <li data-video="cN9uSHL1VMc"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Cuerpo extraño trozo de carne de hace 5 días en esófago</span></li>
       </ul>
     </div>
 
@@ -144,14 +160,17 @@
     </button>
     <div class="panel">
       <ul>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://www.youtube.com/shorts/L1biKnBI2NY" target="_blank" rel="noopener noreferrer">Diverticulosis</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://youtube.com/shorts/51X-pwj61Zk" target="_blank" rel="noopener noreferrer">Colonoscopía normal</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://youtube.com/shorts/Udg3Fxi0u4c" target="_blank" rel="noopener noreferrer">Triocéfalo</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://youtube.com/shorts/rXtSRnQTsug" target="_blank" rel="noopener noreferrer">Pólipo en recto</a></li>
-        <li><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><a href="https://youtu.be/eU0maFhLuwA" target="_blank" rel="noopener noreferrer">Tumor de recto</a></li>
+        <li data-video="L1biKnBI2NY"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Diverticulosis</span></li>
+        <li data-video="51X-pwj61Zk"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Colonoscopía normal</span></li>
+        <li data-video="Udg3Fxi0u4c"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Triocéfalo</span></li>
+        <li data-video="rXtSRnQTsug"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Pólipo en recto</span></li>
+        <li data-video="eU0maFhLuwA"><img class="video-icon" src="https://img.icons8.com/ios-filled/50/ffffff/video.png" alt="Video icon"/><span>Tumor de recto</span></li>
       </ul>
     </div>
 
+    <div id="video-player">
+      <p>Selecciona un video para reproducirlo aquí.</p>
+    </div>
   </main>
 
   <script>
@@ -164,6 +183,20 @@
           panel.style.maxHeight = null;
         } else {
           panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+
+    const videoPlayer = document.getElementById('video-player');
+    const videoItems = document.querySelectorAll('.panel li');
+
+    videoItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const videoId = item.getAttribute('data-video');
+        if(videoId) {
+          videoPlayer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>`;
+          // Desplazar suavemente hacia el reproductor
+          videoPlayer.scrollIntoView({behavior: "smooth"});
         }
       });
     });
