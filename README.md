@@ -17,10 +17,10 @@
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
-    header img {
-      height: 60px;
-      margin-right: 20px;
-    }
+   <header style="background-color:#001f3f; color:white; padding:20px; display:flex; align-items:center; justify-content:center; gap:15px;">
+    <img src="images/logo.jpg" alt="Logo Centro Nacional de Endoscopia" style="height:80px; width:auto;">
+    <h1 style="font-size:32px; margin:0; font-weight:bold;">Centro Nacional de Endoscopia</h1>
+</header>
     header h1 {
       margin: 0;
       font-size: 1.8rem;
