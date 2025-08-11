@@ -18,8 +18,8 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
     header img {
-      <img src="logo.png" alt="Logo Centro Nacional de Endoscopia" />
-  <h1>Centro Nacional de Endoscopia</h1>
+      height: 60px;
+      margin-right: 20px;
     }
     header h1 {
       margin: 0;
@@ -126,7 +126,7 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo Centro Nacional de Endoscopia" />
+    <img src="assets/images/logo.png" alt="Logo Centro Nacional de Endoscopia" />
     <h1>Centro Nacional de Endoscopia</h1>
   </header>
 
